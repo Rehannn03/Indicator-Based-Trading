@@ -1,0 +1,14 @@
+{
+    "users": [
+      {
+        "id": "user1",
+        "strategies": {
+          "RSI": {
+            "period": 14,
+            "buy": 70,
+            "sell": 30
+          }
+        }
+      }
+    ]
+}
