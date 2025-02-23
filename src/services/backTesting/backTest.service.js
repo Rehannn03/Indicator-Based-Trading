@@ -13,10 +13,8 @@ class BackTestService{
             RSI: new RsiStrategy(user.strategies.RSI),
           };
         let position=null
-
         for(let i=user.strategies.RSI.period;i<data.length;i++){
             const window=data.slice(0,i+1)
-            // console.log(window)
             const signal = Object.entries(strategies).map(([name, strategy]) => ({
                 strategy: name,
                 ...strategy.check(window)
@@ -39,7 +37,6 @@ class BackTestService{
                 position=null
             }
         }
-        console.log(trades)
         return trades
     }
 }

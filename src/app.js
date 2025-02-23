@@ -13,7 +13,7 @@ async function main(){
             user,
             'BTC/USDT',
             '1h',
-            20
+            1
         )
 
         trades.forEach(trade=>{

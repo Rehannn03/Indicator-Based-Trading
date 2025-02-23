@@ -7,7 +7,7 @@ class RsiStrategy extends TradingStrategy{
         super(params)
         this.previousRsi=null
     }
-
+    
     calculateRsi(closes){
         return technicalIndicators.RSI.calculate({
             values:closes,
@@ -19,17 +19,14 @@ class RsiStrategy extends TradingStrategy{
         const closes=data.map(d=>d[4])
         const rsiValue=this.calculateRsi(closes)
         const currentRsi=rsiValue[rsiValue.length-1] || 0
-
-        const signal={
+        const signal={ 
             action:null,
             price:data[data.length-1][4],
             timestamp:data[data.length-1][0]
         }
-
         if(this.previousRsi!==null){
             if(this.previousRsi<this.params.sell && currentRsi>=this.params.sell){
                 signal.action='BUY'
-                console.log(this.previousRsi)
         } else if(this.previousRsi>this.params.buy && currentRsi<=this.params.buy){
             signal.action='SELL'
         }
