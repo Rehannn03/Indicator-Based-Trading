@@ -46,6 +46,8 @@ trading-backend/
 │   │   └── strategies/
 │   │       ├── rsiStrategy.js
 │   │       └── tradingStrategy.js
+│   ├── users/
+│   │   └── user.model.js
 │   └── app.js
 ├── .gitignore
 ├── package.json
